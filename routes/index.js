@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   knex.raw(`select posts.title, posts.text, users.username, posts.id from posts inner join users on users.id = posts.author_id`)
   .then(function(data) {
     res.render('index', {allPosts: data.rows, title:'Reddit but Better', cookie: req.cookies.user_id})
-    console.log(data.rows)
+
 })
 });
 //get profile page
@@ -39,12 +39,11 @@ router.post('/', function(req, res, next) {
 })
 //get post/comment page
 router.get('/post/:id', function(req,res,next) {
-    knex.raw(`select posts.title, posts.text, posts.id, users.username from posts inner join users on users.id = posts.author_id`)
+    knex.raw(`select posts.title, posts.text, posts.id, users.username from posts inner join users on posts.author_id = users.id where posts.id = ${req.params.id}`)
     .then(function(data) {
     knex.raw(`select comments.comment_text from comments where comments.original_post_id = ${req.params.id}`)
     .then(function(data2) {
       res.render('posts', {allPosts: data.rows[0], comment: data2.rows, title: 'Reddit but Better', cookie: req.cookies.user_id})
-
     })
 })
 })

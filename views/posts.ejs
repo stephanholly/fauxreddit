@@ -12,27 +12,25 @@
       <div class="nav">
         <div class="home"><button><a href="/">Home</a></button></div>
       </div>
-      <div class="title">
-        <h1>Post</h1>
-      </div>
-        <div class="indPost">
-          <div class="indPostTitle"><h3><%= allPosts.title %></h3></div>
+        <div class="postIndPostTitle"><h3><%= allPosts.title %></h3></div>
+        <div class="postIndPost">
           <div class="indPostText"><p><%= allPosts.text %></p></div>
           <div class="indPostAuth"><p>posted by: <%= allPosts.username %></p></div>
         </div>
         <% if(comment) { %>
-        <div class="comments">
-          <div class="comment-title"><p>comments</p></div>
+        <div class="comment-title"><p>comments</p></div>
+        <div class="postComments">
           <% for(var i = 0; i < comment.length; i++){ %>
           <div class="comment-content"><p><%= comment[i].comment_text %></p></div>
-        </div>
+
       <% } %>
+        </div>
       <% } %>
       <% if(cookie){ %>
       <div class="writeComment">
         <form action="/post/<%= allPosts.id %>/comment" method="post">
-          <input type="text" name="comText" placeholder="Write a comment"><br>
-          <input type="submit" name="submitNew" value="Comment">
+          <textarea class="write" type="text" cols="40" rows="5" name="comText" placeholder="Write a comment"></textarea><br>
+          <input class="commsend" type="submit" name="submitNew" value="Comment">
         </form>
       </div>
       <% } %>

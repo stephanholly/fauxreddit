@@ -9,22 +9,20 @@
   box-sizing: border-box;
 }
 
-.container {
+.container, html {
   width: 100%;
+  background-color: #F9F9F9;
 
-
-  top: 0;
-  background: url("/images/nn.jpg") center ;
-  -webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-  z-index: -1;
 }
 
 .nav {
   height: 7vh;
   background-color: #CEE3F8;
+}
+
+.home {
+  padding-left: 2%;
+  padding-top: 2vh;
 }
 
 .indPost {
@@ -55,7 +53,7 @@ a {
   display: inline-block;
   padding-left: 2%;
   padding-right: 2%;
-    padding-top: 2vh;
+  padding-top: 2vh;
 }
 
 .newPost {
@@ -64,23 +62,24 @@ a {
   background-color: white;
   width: 70%;
   position: relative;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border: 1px solid black;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 1px solid black;
+  margin-bottom: 5vh;
 }
 
 .content {
   width: 60%;
   padding-top: 5vh;
   position: relative;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .text1{
@@ -89,7 +88,78 @@ a {
 }
 
 .newTitle, .submitNew {
-
   border: 1px solid black;
   width: 60%;
+}
+
+.postIndPost {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding-top: 5vh;
+  position: relative;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+
+}
+
+.postIndPostTitle {
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 2em;
+}
+
+.postComments {
+  background-color: white;
+  border: 1px solid black;
+  width: 60%;
+  position: relative;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 2vh;
+}
+
+.writeComment {
+  background-color: white;
+  border: 1px solid black;
+  width: 60%;
+  position: relative;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 2vh;
+}
+
+.write {
+  height: 20vh;
+  width: 70%;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.commsend {
+  background-color: white;
+  border: 1px solid black;
+  padding:10px;
+}
+
+.comment-title {
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 1.5em;
+}
+
+.submitNew {
+  width: 25%;
 }
