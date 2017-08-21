@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/nav.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="home"><button><a href="/">Home</a></button></div>
+        <form class="logoutForm" action="/logout" method="get">
+          <input type="submit" name="submit" value="Logout">
+        </form>
+        <form class="delete" action="/profile/<%= user.id %>/delete" method="post">
+          <input type="submit" name="delete" value="Delete Account">
+        </form>
+      </div>
+      <div class="title">
+        <h1><%= user.username %>'s profile</h1>
+      </div>
+      <div class="myPosts">
+        <h3>Posts</h3>
+      </div>
+    </div>
+  </body>
+</html>

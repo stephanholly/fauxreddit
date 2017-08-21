@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript" src="/javascripts/nav.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="title">
+          <p><%= title %></p>
+        </div>
+        <% if(cookie){ %>
+        <div class="myProfile"><button><a href="/profile/<%= cookie %>">My Profile</a></button></div>
+        <div class="createPost"><button><a href="#newPost">Create Post</a></button></div>
+        <form class="logoutForm" action="/logout" method="get">
+          <input type="submit" name="submit" value="Logout">
+        </form>
+        <% } else { %>
+        <div class="createAccount"><button><a href="/createAccount">Create Account</a></button></div>
+        <div class="login"><button><a href="/login">Login</a></button></div>
+        <% } %>
+      </div>
+    <div class="content">
+      <div class="posts">
+        <% for(var i = 0; i < allPosts.length; i++){ %>
+          <a href="/post/<%= allPosts[i].id %>"><div class="indPost">
+            <div class="indPostTitle"><h3><%= allPosts[i].title %></h3></div>
+            <div class="indPostAuth"><p>posted by: <%= allPosts[i].username %></p></div>
+          </div></a>
+        <% } %>
+      </div><br>
+      <% if(cookie){ %>
+      <a name="newPost"></a><div class="newPost">
+        <div class="newPostTitle">
+          <form action="/" method="post">
+            <input class ="newTitle" type="text" name="newTitle" placeholder="Title"><br>
+            <textarea class="text1" name="text1" cols="40" rows="5" placeholder="What's on your mind?"></textarea><br>
+            <input class="submitNew" type="submit" name="submitNew" value="Submit">
+          </form>
+        </div>
+      </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
