@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/lightning-electric-energy.png" type="image/x-icon">
+    <link rel="icon" href="/images/lightning-electric-energy.png" type="image/x-icon">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript" src="/javascripts/nav.js"></script>
   </head>
@@ -12,14 +12,14 @@
       <div class="nav">
         <div class="home"><button><a href="/">Home</a></button></div>
       </div>
-      <div class="title">
-        <h1>Login</h1>
-      </div>
       <div class="loginUser">
-          <form action="/login" method="post">
-            <input type="text" name="username" placeholder="username"><br>
-            <input type="password" name="password" placeholder="password"><br>
-            <input type="submit" name="submit" value="Login">
+        <div class="loginTitle">
+          <h1>Login</h1>
+        </div>
+          <form class="loginInput" action="/login" method="post">
+            <input class="loginUsername" type="text" name="username" placeholder="username"><br>
+            <input class="loginPassword" type="password" name="password" placeholder="password"><br>
+            <input class="loginLogin" type="submit" name="submit" value="Login">
           </form>
       </div>
     </div>

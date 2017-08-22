@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/lightning-electric-energy.png" type="image/x-icon">
+    <link rel="icon" href="/images/lightning-electric-energy.png" type="image/x-icon">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript" src="/javascripts/nav.js"></script>
   </head>
@@ -12,16 +12,16 @@
       <div class="nav">
         <div class="home"><button><a href="/">Home</a></button></div>
       </div>
-      <div class="title">
-        <h1>Create Account</h1>
-      </div>
       <div class="createUser">
-          <form action="/create" method="post">
-            <input type="text" name="username" placeholder="username"><br>
-            <input type="password" name="password" placeholder="password"><br>
-            <input type="password" name="confirm" placeholder="confirm password"><br>
-            <input type="email" name="email" placeholder="email"><br>
-            <input type="submit" name="submit" value="create account">
+        <div class="createTitle">
+          <h1>Create Account</h1>
+        </div>
+          <form class="createInput" action="/create" method="post">
+            <input class="createEntry" type="text" name="username" placeholder="username"><br>
+            <input class="createEntry" type="password" name="password" placeholder="password"><br>
+            <input class="createEntry" type="password" name="confirm" placeholder="confirm password"><br>
+            <input class="createEntry" type="email" name="email" placeholder="email"><br>
+            <input class="createEntry" type="submit" name="submit" value="create account">
           </form>
       </div>
     </div>

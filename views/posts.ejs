@@ -2,8 +2,8 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/lightning-electric-energy.png" type="image/x-icon">
+    <link rel="icon" href="/images/lightning-electric-energy.png" type="image/x-icon">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script type="text/javascript" src="/javascripts/nav.js"></script>
   </head>
@@ -17,12 +17,11 @@
           <div class="indPostText"><p><%= allPosts.text %></p></div>
           <div class="indPostAuth"><p>posted by: <%= allPosts.username %></p></div>
         </div>
-        <% if(comment) { %>
+        <% if(comment.length > 0) { %>
         <div class="comment-title"><p>comments</p></div>
         <div class="postComments">
-          <% for(var i = 0; i < comment.length; i++){ %>
-          <div class="comment-content"><p><%= comment[i].comment_text %></p></div>
-
+          <% for(var i = comment.length-1; i >= 0; i--){ %>
+          <div class="comment-content"><li><%= comment[i].username %>: <%= comment[i].comment_text %></li></div>
       <% } %>
         </div>
       <% } %>
