@@ -14,7 +14,7 @@
         <form class="logoutForm" action="/logout" method="get">
           <input type="submit" name="submit" value="Logout">
         </form>
-        <form class="delete" action="/profile/<%= user.id %>/delete" method="post">
+        <form class="delete" action="/profile/<%= user[0].id %>/delete" method="post">
           <input type="submit" name="delete" value="Delete Account">
         </form>
       </div>

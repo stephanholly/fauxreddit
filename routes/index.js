@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 //get profile page
 router.get('/profile/:id', function(req,res,next) {
   if(req.cookies.user_id) {
-    knex.raw(`select posts.title, posts.text, users.username from posts inner join users on users.id = posts.author_id where posts.author_id = ${req.cookies.user_id}`)
+    knex.raw(`select posts.title, posts.text, users.id, users.username from posts inner join users on users.id = posts.author_id where posts.author_id = ${req.cookies.user_id}`)
     .then(function(user) {
       res.render('profile', {user: user.rows, title: 'Faux Reddit'})
       console.log(user.rows);
@@ -87,15 +87,19 @@ router.get('/login', function(req, res, next) {
 router.post('/login', function(req,res,next) {
   knex.raw(`select * from users where username = '${req.body.username}'`)
   .then(function(users) {
+    console.log(users.rows[0])
+    if(users.rows[0]) {
     bcrypt.compare(req.body.password, users.rows[0].password, function(err, response) {
       if(response) {
         res.cookie('user_id', users.rows[0].id)
         res.redirect(`/`)
-        // res.redirect(`/profile/${users.rows[0].id}`)
       } else {
       res.redirect('/')
       }
     })
+  } else {
+      res.redirect('/')
+  }
   })
 })
 
